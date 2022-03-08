@@ -23,22 +23,22 @@ public class MunichPropertiesSynPop extends AbstractPropertiesSynPop {
         attributesMunicipality = PropertiesUtil.getStringPropertyArray(bundle, "attributes.municipality");
 
         // todo this table is not a property but a data container, "ID_city" might be a property? (if this is applciable to other implementations)
-        marginalsMunicipality = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"marginals.municipality","input/syntheticPopulation/marginalsMunicipality.csv"));
+        marginalsMunicipality = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"marginals.municipality","/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/marginalsMunicipality.csv"));
         marginalsMunicipality.buildIndex(marginalsMunicipality.getColumnPosition("ID_city"));
 
 
         //todo same as municipalities
-        marginalsCounty = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"marginals.county ","input/syntheticPopulation/marginalsCounty.csv"));
+        marginalsCounty = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"marginals.county ","/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/marginalsCounty.csv"));
         marginalsCounty.buildIndex(marginalsCounty.getColumnPosition("ID_county"));
 
-        selectedMunicipalities = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"municipalities.list","input/syntheticPopulation/municipalitiesList.csv"));
+        selectedMunicipalities = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"municipalities.list","/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/municipalitiesList.csv"));
         selectedMunicipalities.buildIndex(selectedMunicipalities.getColumnPosition("ID_city"));
 
-        cellsMatrix = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"taz.definition ","input/syntheticPopulation/zoneAttributes.csv"));
+        cellsMatrix = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle,"taz.definition ","/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/zoneAttributes.csv"));
         cellsMatrix.buildIndex(cellsMatrix.getColumnPosition("ID_cell"));
 
         //todo this cannot be the final name of the matrix
-        omxFileName = PropertiesUtil.getStringProperty(bundle, "distanceODmatrix", "input/syntheticPopulation/tdTest.omx");
+        omxFileName = PropertiesUtil.getStringProperty(bundle, "distanceODmatrix", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/HwyPK_iter6.omx");
 
         ageBracketsPerson = PropertiesUtil.getIntPropertyArray(bundle, "age.brackets", new int[]{9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 69, 74, 79, 84, 120});
         ageBracketsPersonQuarter = null;
@@ -53,7 +53,7 @@ public class MunichPropertiesSynPop extends AbstractPropertiesSynPop {
 
         alphaJob = PropertiesUtil.getDoubleProperty(bundle, "employment.choice.alpha", 50);
         gammaJob = PropertiesUtil.getDoubleProperty(bundle, "employment.choice.gamma", -0.003);
-        tripLengthDistributionFileName = PropertiesUtil.getStringProperty(bundle, "trip.length.distribution", "input/syntheticPopulation/tripLengthDistribution.csv");
+        tripLengthDistributionFileName = PropertiesUtil.getStringProperty(bundle, "trip.length.distribution", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/tripLengthDistribution.csv");
 
         schoolTypes = PropertiesUtil.getIntPropertyArray(bundle, "school.types", new int[]{1, 2, 3});
         alphaUniversity = PropertiesUtil.getDoubleProperty(bundle, "university.choice.alpha", 50);
@@ -78,15 +78,15 @@ public class MunichPropertiesSynPop extends AbstractPropertiesSynPop {
         incomeGammaDistribution = new GammaDistributionImpl(incomeShape, 1 / incomeRate);
 
         //todo this properties will be doubled with silo model run properties
-        weightsFileName = PropertiesUtil.getStringProperty(bundle, "weights.matrix", "microData/interimFiles/weigthsMatrix.csv");
-        errorsMunicipalityFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.municipality.matrix", "microData/interimFiles/errorsIPUmunicipality.csv");
-        errorsCountyFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.county.matrix", "microData/interimFiles/errorsIPUcounty.csv");
-        errorsSummaryFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.summary.matrix", "microData/interimFiles/errorsIPUsummary.csv");
+        weightsFileName = PropertiesUtil.getStringProperty(bundle, "weights.matrix", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/microData/interimFiles/weigthsMatrix.csv");
+        errorsMunicipalityFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.municipality.matrix", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/microData/interimFiles/errorsIPUmunicipality.csv");
+        errorsCountyFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.county.matrix", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/icroData/interimFiles/errorsIPUcounty.csv");
+        errorsSummaryFileName = PropertiesUtil.getStringProperty(bundle, "errors.IPU.summary.matrix", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/microData/interimFiles/errorsIPUsummary.csv");
         //todo do not need to ride always?
         if (runMicrolocation) {
-            buildingLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "buildingLocation.list", "input/syntheticPopulation/buildingLocation.csv"));
-            jobLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "jobLocation.list", "input/syntheticPopulation/jobLocation.csv"));
-            schoolLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "schoolLocation.list", "input/syntheticPopulation/schoolLocation.csv"));
+            buildingLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "buildingLocation.list", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/buildingLocation.csv"));
+            jobLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "jobLocation.list", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/jobLocation.csv"));
+            schoolLocationlist = SiloUtil.readCSVfile(PropertiesUtil.getStringProperty(bundle, "schoolLocation.list", "/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/schoolLocation.csv"));
         } else {
             buildingLocationlist = null;
             jobLocationlist = null;

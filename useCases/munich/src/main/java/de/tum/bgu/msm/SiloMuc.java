@@ -27,10 +27,8 @@ public class SiloMuc {
 
         Properties properties = SiloUtil.siloInitialization(args[0]);
 
-        Config config = null;
-        if (args.length > 1 && args[1] != null) {
-            config = ConfigUtils.loadConfig(args[1]);
-        }
+        Config config =  ConfigUtils.loadConfig("/Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/matsim_input/config.xml");
+
         logger.info("Started SILO land use model for the Munich Metropolitan Area");
         DataContainerWithSchools dataContainer = DataBuilder.getModelDataForMuc(properties, config);
         DataBuilder.read(properties, dataContainer);

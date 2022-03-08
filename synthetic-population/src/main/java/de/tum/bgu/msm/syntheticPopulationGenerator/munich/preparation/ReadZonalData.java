@@ -165,7 +165,7 @@ public class ReadZonalData {
         logger.info("   Starting to read OMX matrix");
         OmxFile travelTimeOmx = new OmxFile(PropertiesSynPop.get().main.omxFileName);
         travelTimeOmx.openReadOnly();
-        Matrix distanceMatrix = SiloUtil.convertOmxToMatrix(travelTimeOmx.getMatrix("mat1"));
+        Matrix distanceMatrix = SiloUtil.convertOmxToMatrix(travelTimeOmx.getMatrix("HOVDist"));
         OmxLookup omxLookUp = travelTimeOmx.getLookup("lookup1");
         int[] externalNumbers = (int[]) omxLookUp.getLookup();
         distanceMatrix.setExternalNumbersZeroBased(externalNumbers);
