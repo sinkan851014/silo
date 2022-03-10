@@ -1,0 +1,8 @@
+scenario.name            = test
+run.ipu.synthetic.pop    = true
+base.year = 2011
+end.year                 = 2011
+attributes.county	  	 	= ddFloor60,ddFloor80,ddFloor100,ddFloor120,ddFloor2000,smallDwellings2,smallDwellings5,smallDwellings6,smallDwellings9,mediumDwellings2,mediumDwellings5,mediumDwellings6,mediumDwellings9
+attributes.municipality	 	= smallDwellings,mediumDwellings,ddOwned,ddRented,foreigners,male4,female4,male9,female9,male14,female14,male19,female19,male24,female24,male29,female29,male34,female34,male39,female39,male44,female44,male49,female49,male54,female54,male59,female59,male64,female64,male69,female69,male74,female74,male79,female79,male99,female99,hhSize5,hhSize4,hhSize3,hhSize2,hhSize1,maleWorkers,femaleWorkers,population,hhTotal
+attributes.borough			= MUCforeigners, MUCage5, MUCage17, MUCage64, MUCage99, MUChhWithChildren, MUChhSize1, MUCfemaleWorkers, MUCmaleWorkers, MUCfemale, MUCpopulation, MUChhTotal
+distanceODmatrix		    = /Users/cooperhuang/Downloads/ud282-master/silo/test/scenarios/munich_new/input/syntheticPopulation/tdTest.omx
